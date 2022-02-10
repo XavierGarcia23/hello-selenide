@@ -8,6 +8,16 @@ import static com.codeborne.selenide.Selenide.*;
 // http://localhost:3000/#!/success
 public class OrderPage {
 
-    public SelenideElement elementP = $("p");
+    private SelenideElement alertDiv = $(".alert-danger");
+
+    private SelenideElement sentMessage = $("p");
+
+    public SelenideElement getAlertDiv() {
+        return alertDiv;
+    }
+
+    public SelenideElement getSentMessage() {
+        return sentMessage;
+    }
 
 }

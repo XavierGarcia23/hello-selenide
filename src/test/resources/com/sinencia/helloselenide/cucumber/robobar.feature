@@ -28,3 +28,12 @@ Feature: Robobar cart
     And user adds a beer
     And user adds a wine
     Then total should be €6.25
+
+  Scenario: user add one beer and age is 17
+    Given user opens robobar website
+    When user adds a beer
+    Then total should be €2.00
+    When user press submit button
+    And user enter her age is 17
+    And user press order button
+    Then alert is active

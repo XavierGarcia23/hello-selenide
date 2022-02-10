@@ -20,6 +20,10 @@ public class CheckoutPage {
         return textCheckoutPage;
     }
 
+    public SelenideElement getOrder() {
+        return btnOrderConfirm;
+    }
+
     public OrderPage order() {
         btnOrderConfirm.click();
         return page(OrderPage.class);
