@@ -22,11 +22,38 @@ public class CartPage {
         btnAddCola.click();
     }
 
+    public void addCola(int num) {
+        for(int i=0; i<num; i++) {
+            btnAddCola.click();
+        }
+    }
+
+    public void addBeer() {
+        btnAddBeer.click();
+    }
+
+    public void addWine() {
+        btnAddWine.click();
+    }
+
     public SelenideElement getTotal() {
         return txtTotal;
     }
 
-    //public CheckoutPage checkout() {
-    //    return page(CheckoutPage.class);
-    //}
+    public void checkoutButton() {
+        btnCheckout.click();
+    }
+
+    public CheckoutPage checkout() {
+        btnCheckout.click();
+        return page(CheckoutPage.class);
+    }
+
+    public SelenideElement getCheckoutButton() {
+        return btnCheckout;
+    }
+
+    public boolean btnCheckoutEnabled() {
+        return btnCheckout.isEnabled();
+    }
 }
