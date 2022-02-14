@@ -22,7 +22,7 @@ public class CheckoutSuiteTest {
 
     @BeforeEach
     public void setUp() {
-        open("http://10.250.10.1:3000/");
+        open("/");
     }
 
     @Test

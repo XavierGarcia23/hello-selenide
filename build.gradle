@@ -38,8 +38,10 @@ dependencies {
 }
 
 test {
+    systemProperties["selenide.baseUrl"]="http://10.250.10.1:3000";
     systemProperties["selenide.remoto"]="http://localhost:4444/wd/hub";
-    systemProperties["selenide.browser"]="firefox";
+    systemProperties["selenide.browser"]="chrome";
+    systemProperties["selenide.browserVersion"]="97.0";
     ignoreFailures = true
     useJUnitPlatform()
 }
