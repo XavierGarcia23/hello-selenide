@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh './gradlew clean'
             }
+        }
 
         stage('Test') {
             parallel {
