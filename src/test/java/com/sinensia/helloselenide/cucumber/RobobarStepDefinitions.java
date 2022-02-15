@@ -8,6 +8,7 @@ import com.sinensia.helloselenide.OrderPage;
 import io.cucumber.java.PendingException;
 import io.cucumber.java.en.*;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.open;
@@ -20,11 +21,17 @@ public class RobobarStepDefinitions {
     @Given("user opens robobar website")
     @Given("l'usuari entra al bar")
     public void userOpensRobobarWebsite() {
-        Configuration.browserSize = "1288x800";
+        //Configuration.browserSize = "1288x800";
         SelenideLogger.addListener("allure", new AllureSelenide()
                 .screenshots(true)
                 .savePageSource(false)
         );
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        //capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
+
         open("/");
         cartPage = new CartPage();
         checkoutPage = null;
