@@ -9,6 +9,9 @@ pipeline {
         }
 
         stage('Test') {
+            //Saltamos todo el stage de 'Test'
+            when { expression { false } }
+
             parallel {
                 stage('test: chrome') {
                     steps {
